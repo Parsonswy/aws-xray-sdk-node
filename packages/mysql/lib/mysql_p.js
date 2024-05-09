@@ -276,7 +276,7 @@ function createSqlData(config, values, sql) {
     commandType);
 
   if (process.env.AWS_XRAY_COLLECT_SQL_QUERIES && sql) {
-    data.sanitized_query = sql;
+    data.sanitized_query = sql.sql || sql;
   }
 
   return data;
